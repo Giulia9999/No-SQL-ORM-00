@@ -14,7 +14,7 @@ import java.util.Collections;
 public class MongoDBConfig extends AbstractMongoClientConfiguration {
     @Override
     protected String getDatabaseName() {
-        return "primo-MongoDB";
+        return "esercizio-MongoDB";
     }
 
     @Override
@@ -30,7 +30,7 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
 
     @Override
     protected Collection<String> getMappingBasePackages() {
-        return Collections.singleton("com.example");
+        return Collections.singleton("com.example.nosqlorm00");
     }
 
     @Override

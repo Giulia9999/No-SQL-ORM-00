@@ -13,6 +13,7 @@ public class UserController {
     UserRepository userRepository;
     @PostMapping
     public User createUser(@RequestBody User user){
+        user.setId(null);
         return userRepository.save(user);
     }
     @GetMapping
