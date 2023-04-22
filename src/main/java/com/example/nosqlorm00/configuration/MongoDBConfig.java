@@ -18,10 +18,9 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
     }
 
     @Override
-    //CREIAMO LA RELAZIONE CON IL DATABASE
-    //PRENDIAMO LA STRINGA DI CONNESSIONE DA MONGODB (In "connect"-"connect your application"
     public MongoClient mongoClient() {
-        ConnectionString connectionString = new ConnectionString("mongodb+srv://Giuliac35:cTXq4q8r2TJEhbHf@database-prova.z3frsop.mongodb.net/?retryWrites=true&w=majority");
+        ConnectionString connectionString = new ConnectionString
+                ("mongodb+srv://Giuliac35:cTXq4q8r2TJEhbHf@database-prova.z3frsop.mongodb.net/?retryWrites=true&w=majority");
         //a questo punto si fa la BUILD
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
@@ -30,12 +29,10 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
     }
 
     @Override
-    //METODO PER INDICARE AL MONGO DB DA QUALI ENTITà DEVE PRENDERE I DATI
     protected Collection<String> getMappingBasePackages() {
-        return Collections.singleton("co.develhope");
+        return Collections.singleton("com.example");
     }
 
-    //METODO PER CREARE GLI INDICI
     @Override
     protected boolean autoIndexCreation() {
         return true;
