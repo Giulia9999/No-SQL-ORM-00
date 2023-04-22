@@ -20,8 +20,7 @@ public class MongoDBConfig extends AbstractMongoClientConfiguration {
     @Override
     public MongoClient mongoClient() {
         ConnectionString connectionString = new ConnectionString
-                ("mongodb+srv://Giuliac35:cTXq4q8r2TJEhbHf@database-prova.z3frsop.mongodb.net/?retryWrites=true&w=majority");
-        //a questo punto si fa la BUILD
+                ("mongodb+srv://Giuliac35:password@database-prova.z3frsop.mongodb.net/?retryWrites=true&w=majority");
         MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                 .applyConnectionString(connectionString)
                 .build();
