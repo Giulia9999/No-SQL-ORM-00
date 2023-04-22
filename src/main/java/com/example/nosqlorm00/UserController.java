@@ -33,12 +33,9 @@ public class UserController {
 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable String id,@RequestBody User user) throws Exception {
-        Optional<User> userId = userRepository.findById(id);
-        if(userId.isPresent()){
-            return userRepository.save(user);
-        }else {
-            throw new Exception();
-        }
+        if(!userRepository.existsById(id)) throw new Exception("User not found");
+        user.setId(id);
+        return userRepository.save(user);
     }
 
     @DeleteMapping("/{id}")
